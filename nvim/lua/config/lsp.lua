@@ -2,32 +2,14 @@
 local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 local lspconfig = require('lspconfig')
 
-lspconfig.rust_analyzer.setup {
-  -- Server-specific settings. See `:help lspconfig-setup`
-  settings = { ['rust-analyzer'] = {}, },
-	capabilities = capabilities ,
+local servers = {
+	'rust_analyzer', 'html', 'tsserver', 'eslint',
+	'emmet_ls', 'cssls', 'jsonls', 'bashls'
 }
-lspconfig.html.setup{
-	capabilities = capabilities
-}
-lspconfig.tsserver.setup{
-	capabilities = capabilities
-}
-lspconfig.eslint.setup{
-	capabilities = capabilities
-}
-lspconfig.emmet_ls.setup{
-	capabilities = capabilities
-}
-lspconfig.cssls.setup{
-	capabilities = capabilities
-}
-lspconfig.jsonls.setup{
-	capabilities = capabilities
-}
-lspconfig.bashls.setup{
-	capabilities = capabilities
-}
+
+for _, server in ipairs(servers) do
+	lspconfig[server].setup{ capabilities = capabilities }
+end
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
