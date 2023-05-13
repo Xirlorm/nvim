@@ -1,46 +1,42 @@
-local g = vim.g
-
-g.ale_sign_error = ' ✖'    -- ' ✗'
-g.ale_sign_warning = ' '  -- ' ⚠'
-g.ale_sign_info = ' ℹ'
-g.ale_sign_style_error = ' ✖'
-g.ale_sign_style_warning = ' '
-g.ale_completion_enabled = 1
-g.ale_completion_autoimport = 1
-g.ale_lint_on_save = 1
-g.ale_lint_on_insert_leave = 1
--- g.ale_lint_on_text_changed = 'never'
-g.ale_completion_enabled = 1
-g.ale_completion_delay = 200
-g.ale_completion_max_suggestions = 20
-g.ale_linters = {
-	python =  {'flake8', 'pylint'},
-	c = {'gcc', 'clang-tidy'},
-	javascript = {'eslint'},
-	cpp = {'g++', 'clang-tidy', 'cppcheck'},
-	rust = {'cargo', 'rustc', 'rls'},
-}
-
 vim.cmd([[
+	autocmd BufNewFile,BufRead *.rs set filetype=rust
+
+	let g:ale_sign_error = ' ✖'    -- ' ✗'
+	let g:ale_sign_warning = ' '  -- ' ⚠'
+	let g:ale_sign_info = ' ℹ'
+	let g:ale_sign_style_error = ' ✖'
+	let g:ale_sign_style_warning = ' '
+	let g:ale_completion_enabled = 1
+	let g:ale_completion_autoimport = 1
+	let g:ale_lint_on_save = 1
+	let g:ale_lint_on_insert_leave = 1
+	" let g:ale_lint_on_text_changed = 'never'
+	let g:ale_completion_enabled = 1
+	let g:ale_completion_max_suggestions = 20
+	" let g:ale_disable_lsp = 1
+
+	let g:ale_linters = {
+		\'c': ['clang-tidy'],
+		\'cpp': ['clang-tidy', 'cppcheck'],
+		\'rust': ['analyzer', 'cargo'],
+		\'javascript':  ['eslint'],
+		\'typescript': ['tslint', 'eslint'],
+		\'python': ['flake8', 'pylint'],
+		\}
+
 	let g:ale_fixers = {
-		\'*': ['remove_trailing_lines', 'trim_whitespace'],
+		\'c': ['clang-format'],
+		\'cpp': ['clang-format'],
+		\'rust': ['rustfmt'],
 		\'javascript': ['eslint', 'prettier'],
 		\'typescript': ['eslint','tslint', 'xo'],
-		\'css': ['stylelint', 'fecs', 'prettier'],
-		\'rust': ['rustfmt', 'rls'],
+		\'css': ['prettier', 'fecs', 'stylelint'],
 		\'python': ['autopep8'],
-		\'cpp': ['clang-format'],
-		\'c': ['clang-format']
+		\'*': ['remove_trailing_lines', 'trim_whitespace'],
 		\}
-	" Set completion source
-	let g:ale_completion_sources = {
-		\'nvimcmp': ['buffer', 'path', 'tags']
-		\}
-	" Ale completion
-	" set omnifunc = 'ale#completion#OmniFunc'
 
-	" Show ALE diagnostics in the sign column
-	inoremap <silent><expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+	" Ale completion
+	" set omnifunc=ale#completion#OmniFunc
 
 	" Go to next error
 	nmap <silent> <C-i> <Plug>(ale_next_wrap)

@@ -15,7 +15,7 @@ require('lualine').setup {
       statusline = 1000,
       tabline = 1000,
       winbar = 1000
-    }
+    },
   },
   sections = {
     lualine_a = {'mode'},
@@ -24,6 +24,11 @@ require('lualine').setup {
 			{'diff'},
 			{'diagnostics',
 				sources = {'ale'},
+				sections = { 'error', 'warn', 'info', 'hint' },
+
+				symbols = {error = '✖:', warn = ':', info = 'ℹ:', hint = 'h'},
+				-- colored = true,
+				update_in_insert = false,
 			}
 		},
     lualine_c = {'selectioncount'},
@@ -52,7 +57,7 @@ require('lualine').setup {
 				hide_filename_extension = false,
 				icons_enabled = true,
 				component_separators = {left = '', right = ''},
-				section_separators = {left = '', right = ''}
+				section_separators = {left = '', right = ''},
 			}
 		},
 		lualine_b = {},

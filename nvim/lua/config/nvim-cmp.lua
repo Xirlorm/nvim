@@ -59,12 +59,3 @@ cmp.setup.cmdline(':', {
 		{ name = 'cmdline' }
 	})
 })
-
-vim.cmd([[
-	let g:cmp_sources = {
-		\ 'ale': v:true,
-		\ 'buffer': v:true,
-		\ 'path': v:true,
-		\ 'tags': v:true,
-	\ }
-]])

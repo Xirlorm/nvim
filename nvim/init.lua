@@ -37,17 +37,21 @@ set.nrformats = 'bin' --Use binary increment and decrement
 set.encoding = 'utf-8'
 set.redrawtime = 3500
 set.undofile = true --Enable persistent undo
-set.undodir = '~/.cache/.nvim-undo' --Set undo directory
 -- set.omnifunc = 'syntaxcomplete#Complete' --Neovim completion
 set.colorcolumn = '81' --Mark max character width
 -- set.signcolumn = 'no'
-vim.cmd'set completeopt=menu,menuone,noinsert,noselect'
+vim.cmd[[
+	" Set undo directory
+	set undodir=~/.cache/.nvim-undo
+	" don't select the first item.
+	set completeopt=menu,menuone,noinsert,noselect
+]]
 
 
 --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -- Key Bindings
 --@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-g.mapleader = ',' --Set map leader to space
+g.mapleader = 'g' --Set map leader to space
 -- Unhighlight text using escape key
 vim.cmd'nnoremap <esc> :noh<return><esc>'
 
@@ -65,8 +69,8 @@ require('config.lsp')
 require('mason').setup()
 require('mason-lspconfig').setup{
 	 ensure_installed = {
-		'html', 'cssls', 'jsonls', 'bashls', 'tsserver',
-		'emmet_ls', 'eslint'
+		'html', 'cssls', 'jsonls', 'bashls',
+		'tsserver', 'emmet_ls', 'eslint'
 	 },
 }
 require('config.ale')
