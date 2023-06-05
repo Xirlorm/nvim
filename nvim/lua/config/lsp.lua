@@ -1,41 +1,40 @@
 -- Setup language servers.
 local capabilities = require'cmp_nvim_lsp'.default_capabilities()
-local lspconfig = require('lspconfig')
-
+local nvim_lsp = require('lspconfig')
 local servers = {
-	'html', 'tsserver', 'eslint',
+	'html', 'tsserver', 'eslint', 'clangd',
 	'emmet_ls', 'cssls', 'jsonls', 'bashls'
 }
 
 for _, server in ipairs(servers) do
-	lspconfig[server].setup{ capabilities = capabilities }
+	nvim_lsp[server].setup{ capabilities = capabilities }
 end
 
 -- Rust analyzer config
 local on_attach = function(client)
     require'completion'.on_attach(client)
 end
-lspconfig.rust_analyzer.setup({
-    on_attach=on_attach,
-    settings = {
-        ['rust-analyzer'] = {
-            imports = {
-                granularity = {
-									group = 'module',
-								},
-                prefix = 'self',
-            },
-            cargo = {
-							buildScripts = {
-								enable = true,
-							},
-						},
-            procMacro = {
-							enable = true,
-						},
-        }
-    },
-		capabilities = capabilities,
+
+nvim_lsp.rust_analyzer.setup({
+	on_attach = on_attach,
+	settings = {
+		['rust-analyzer'] = {
+			imports = {
+				granularity = {
+					group = 'module',
+				},
+				prefix = 'self',
+			},
+			cargo = {
+				buildScripts = {
+					enable = true,
+				},
+			},
+			procMacro = {
+				enable = true,
+			},
+		}
+	},
 })
 
 -- Global mappings.

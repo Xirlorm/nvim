@@ -1,21 +1,21 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
-  use { 'wbthomason/packer.nvim' }
+	-- plugin manager
+	use { 'wbthomason/packer.nvim' }
 
 	-- Colorschemes
-  use {
+	use {
 		'sainnhe/edge',
+		'sainnhe/sonokai',
 		'joshdick/onedark.vim',
-		'nanotech/jellybeans.vim',
-		'folke/tokyonight.nvim'
+		-- 'nanotech/jellybeans.vim',
+		-- 'folke/tokyonight.nvim',
+		-- 'EdenEast/nightfox.nvim',
 	}
 
-  -- Syntax highlighting
-  use { 'nvim-treesitter/nvim-treesitter' }
-
-	-- Auto pair brackets, quotes...
-  use { 'jiangmiao/auto-pairs' }
+	-- Syntax highlighting
+	use { 'nvim-treesitter/nvim-treesitter' }
 
 	-- Status line plugin
 	use {
@@ -23,29 +23,41 @@ return require('packer').startup(function()
 		requires = { 'nvim-tree/nvim-web-devicons', opt = true }
 	}
 
+	-- Nerdtree and icons
+	use {
+		'preservim/nerdtree',
+		'ryanoasis/vim-devicons',
+	}
+
+	-- Auto pair brackets, quotes...
+	use { 'jiangmiao/auto-pairs' }
+
 	--Linter
 	use { 'w0rp/ale' }
 
 	-- Completion
-  use {
+	--[[ use {
 		'skywind3000/vim-auto-popmenu',
 		requires = {'skywind3000/vim-dict'},
-	}
+	}]]
 
 	-- Html completion
-  use { 'mattn/emmet-vim' }
+	use { 'mattn/emmet-vim' }
 
 	-- Rust plugin
-  use { 'rust-lang/rust.vim' }
+	use { 'rust-lang/rust.vim' }
 
-	
+
 	-- LSP Support
-  use {
+	use {
 		'williamboman/mason.nvim',
-		requires = {'williamboman/mason-lspconfig.nvim'}
+		requires = {
+			'williamboman/mason-lspconfig.nvim',
+		}
 	}
 
-  use {
+	-- Completion and snippet plugins
+	use {
 		-- Completion
 		'neovim/nvim-lspconfig',
 		'hrsh7th/cmp-nvim-lsp',

@@ -40,6 +40,8 @@ set.undofile = true --Enable persistent undo
 -- set.omnifunc = 'syntaxcomplete#Complete' --Neovim completion
 set.colorcolumn = '81' --Mark max character width
 -- set.signcolumn = 'no'
+set.timeoutlen = 1000
+set.updatetime = 1000
 vim.cmd[[
 	" Set undo directory
 	set undodir=~/.cache/.nvim-undo
@@ -62,10 +64,12 @@ vim.cmd'nnoremap <esc> :noh<return><esc>'
 --[[ Load plugins and their configurations ]]
 require('plugins')
 require('config.edge')
+require('config.sonokai')
 require('config.treesitter')
 require('config.nvim-lualine')
 require('config.nvim-cmp')
 require('config.lsp')
+require('config.ale')
 require('mason').setup()
 require('mason-lspconfig').setup{
 	 ensure_installed = {
@@ -73,7 +77,6 @@ require('mason-lspconfig').setup{
 		'tsserver', 'emmet_ls', 'eslint'
 	 },
 }
-require('config.ale')
 -- require('config.vim-dict')
 
 g.rustfmt_autosave = 1 -- On save, formats rust code
@@ -86,4 +89,4 @@ end
 -- Turn syntax highlighting on
 vim.cmd.syntax('on')
 -- Set colorscheme
-vim.cmd.colorscheme('edge')
+vim.cmd.colorscheme('sonokai')

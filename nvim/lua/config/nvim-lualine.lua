@@ -1,7 +1,7 @@
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'edge',
+    theme = 'sonokai',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -27,7 +27,7 @@ require('lualine').setup {
 				sections = { 'error', 'warn', 'info', 'hint' },
 
 				symbols = {error = '✖:', warn = ':', info = 'ℹ:', hint = 'h'},
-				-- colored = true,
+				colored = true,
 				update_in_insert = false,
 			}
 		},
@@ -49,25 +49,25 @@ require('lualine').setup {
 		lualine_a = {
 			{'buffers',
 				symbols = {
-					modified = ' •',
-					alternate_file = '-',
+					modified = ' +',
+					alternate_file = ' •',
 					directory =  ''
 				},
-				show_filename_only = true,
+				-- show_filename_only = true,
 				hide_filename_extension = false,
 				icons_enabled = true,
-				component_separators = {left = '', right = ''},
+				component_separators = {left = '|', right = ''},
 				section_separators = {left = '', right = ''},
-			}
+			},
 		},
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {'tabs'},
+		lualine_y = {'tabs'},
+		lualine_z = {'filetype'},
 	},
 	inactive_winbar = {},
-  extensions = {}
+  extensions = {},
 }
 
 require('lualine').hide {
