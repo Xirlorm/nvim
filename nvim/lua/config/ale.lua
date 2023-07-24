@@ -1,4 +1,4 @@
-vim.cmd([[
+vim.cmd[[
 	let g:ale_sign_error = ' ✖'    -- ' ✗'
 	let g:ale_sign_warning = ' '  -- ' ⚠'
 	let g:ale_sign_info = ' ℹ'
@@ -10,7 +10,7 @@ vim.cmd([[
 	let g:ale_lint_on_insert_leave = 1
 	" let g:ale_lint_on_text_changed = 'never'
 	" let g:ale_completion_max_suggestions = 20
-	let g:ale_disable_lsp = 1
+	" let g:ale_disable_lsp = 1
 	let g:ale_lsp_diagnostics = 1
 	let g:ale_use_neovim_diagnostics_api = 1
 
@@ -22,8 +22,8 @@ vim.cmd([[
 		\'cpp': ['clang-tidy', 'cppcheck'],
 		\'rust': ['analyzer'],
 		\'javascript':  ['eslint'],
-		\'typescript': ['tslint', 'eslint'],
-		\'python': ['flake8', 'pylint'],
+		\'typescript': ['eslint', 'tslint'],
+		\'python': ['pyright'],
 		\}
 
 	let g:ale_fixers = {
@@ -39,4 +39,4 @@ vim.cmd([[
 
 	" Go to next error
 	nmap <silent> <C-i> <Plug>(ale_next_wrap)
-]])
+]]

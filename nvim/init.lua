@@ -77,7 +77,6 @@ require('mason-lspconfig').setup{
 		'tsserver', 'emmet_ls', 'eslint'
 	 },
 }
--- require('config.vim-dict')
 
 g.rustfmt_autosave = 1 -- On save, formats rust code
 
