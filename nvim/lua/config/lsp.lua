@@ -18,6 +18,7 @@ local on_attach = function(client)
 end
 
 nvim_lsp.rust_analyzer.setup({
+	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = {
 		['rust-analyzer'] = {
@@ -32,5 +33,4 @@ nvim_lsp.rust_analyzer.setup({
 			}
 		}
 	},
-	capabilities = capabilities 
 })
