@@ -4,16 +4,8 @@ local nvim_lsp = require('lspconfig')
 local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 
 local servers = {
-	'bashls',
-	'clangd',
-	'cssls',
-	'emmet_ls',
-	'eslint',
-	'html',
-	'jsonls',
-	'pyright',
-	'rust_analyzer',
-	'tsserver',
+	'clangd', 'cssls', 'emmet_ls',
+	'eslint', 'html', 'pyright', 'tsserver',
 }
 
 for _, server in ipairs(servers) do
@@ -33,8 +25,12 @@ nvim_lsp.rust_analyzer.setup({
 				granularity = { group = 'module' },
 				prefix = 'self',
 			},
-			cargo = { buildScripts = { enable = true }, },
+			cargo = { buldScripts = { enable = true }, },
 			procMacro = { enable = true },
+			checkOnSave = {
+				command = 'clippy'
+			}
 		}
 	},
+	capabilities = capabilities 
 })

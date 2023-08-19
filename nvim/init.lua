@@ -7,9 +7,9 @@ vim.cmd'filetype plugin on' --Load filetype specific plugins
 vim.cmd'filetype indent on' --Enable indentation based on file type
 
 
---@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -- Editor setttings
---@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 set.number = false
 set.relativenumber = true
 set.mouse = 'a'
@@ -50,31 +50,30 @@ vim.cmd[[
 ]]
 
 
---@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -- Key Bindings
---@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 g.mapleader = 'g' --Set map leader to space
 -- Unhighlight text using escape key
 vim.cmd'nnoremap <esc> :noh<return><esc>'
 
 
---@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 -- Plugins configuration
---@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 --[[ Load plugins and their configurations ]]
 require('plugins')
 require('config.edge')
 require('config.sonokai')
 require('config.treesitter')
 require('config.nvim-lualine')
-require('config.nvim-cmp')
 require('config.lsp')
-require('config.ale')
+require('config.nvim-cmp')
 require('mason').setup()
 require('mason-lspconfig').setup{
 	 ensure_installed = {
-		'html', 'cssls', 'jsonls', 'bashls',
-		'tsserver', 'emmet_ls', 'eslint'
+		'cssls', 'emmet_ls', 'eslint',
+		'html', 'pyright', 'tsserver',
 	 },
 }
 

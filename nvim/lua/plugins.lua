@@ -32,9 +32,6 @@ return require('packer').startup(function()
 	-- Auto pair brackets, quotes...
 	use { 'jiangmiao/auto-pairs' }
 
-	-- Linter engine
-	use { 'w0rp/ale' }
-
 	-- Html completion
 	use { 'mattn/emmet-vim' }
 
