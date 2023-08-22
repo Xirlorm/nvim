@@ -2,8 +2,10 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'sonokai',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    -- component_separators = { left = '', right = ''},
+    -- section_separators = { left = '', right = ''},
+    component_separators = { left = '╲', right = '╱'},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -23,7 +25,7 @@ require('lualine').setup {
 			{'branch'},
 			{'diff'},
 			{'diagnostics',
-				sources = {'ale'},
+				sources = {'nvim_lsp'},
 				sections = { 'error', 'warn', 'info', 'hint' },
 
 				symbols = {error = '✖:', warn = ':', info = 'ℹ:', hint = 'h'},
@@ -44,20 +46,19 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
+	--[[
 	winbar = {},
 	tabline = {
 		lualine_a = {
 			{'buffers',
 				symbols = {
-					modified = ' +',
-					alternate_file = ' •',
+					modified = ' ✒',
+					alternate_file = '●',
 					directory =  ''
 				},
 				-- show_filename_only = true,
 				hide_filename_extension = false,
 				icons_enabled = true,
-				component_separators = {left = '|', right = ''},
-				section_separators = {left = '', right = ''},
 			},
 		},
 		lualine_b = {},
@@ -67,7 +68,11 @@ require('lualine').setup {
 		lualine_z = {'filetype'},
 	},
 	inactive_winbar = {},
-  extensions = {},
+	extensions = {
+		'fzf',
+		'nerdtree',
+	},
+	]]
 }
 
 require('lualine').hide {

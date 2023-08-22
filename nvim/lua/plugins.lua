@@ -1,6 +1,12 @@
-vim.cmd [[packadd packer.nvim]]
+-- Auto-install Packer.nvim if not found
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
-return require('packer').startup(function()
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+  vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+end
+
+vim.cmd [[packadd packer.nvim]]
+require('packer').startup(function()
 	-- plugin manager
 	use { 'wbthomason/packer.nvim' }
 
@@ -21,6 +27,12 @@ return require('packer').startup(function()
 			'nvim-tree/nvim-web-devicons',
 			opt = true
 		}
+	}
+
+	use {
+		'akinsho/bufferline.nvim',
+		tag = "*",
+		requires = 'nvim-tree/nvim-web-devicons'
 	}
 
 	-- Nerdtree and icons
