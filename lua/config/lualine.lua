@@ -3,9 +3,9 @@ require('lualine').setup {
     icons_enabled = true,
     theme = 'catppuccin',
     -- component_separators = { left = '', right = ''},
-    -- section_separators = { left = '', right = ''},
+    -- section_separators = { left = '', right = ''},
     component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
     -- component_separators = { left = '', right = ''},
     -- section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -30,7 +30,7 @@ require('lualine').setup {
 				sources = {'nvim_lsp'},
 				sections = { 'error', 'warn', 'info', 'hint' },
 
-				symbols = {error = '✖:', warn = ':', info = 'ℹ:', hint = 'h'},
+				symbols = {error = '✖:', warn = ':', info = 'ℹ:', hint = ':'},
 				colored = true,
 				update_in_insert = false,
 			}
