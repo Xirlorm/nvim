@@ -2,14 +2,13 @@ local set = vim.opt
 local g = vim.g
 
 set.compatible = false --Enable vim features unavailable in vi
-vim.cmd'filetype on' --Enable filetype detection
-vim.cmd'filetype plugin on' --Load filetype specific plugins
-vim.cmd'filetype indent on' --Enable indentation based on file type
+vim.cmd('filetype on') --Enable filetype detection
+vim.cmd('filetype plugin on') --Load filetype specific plugins
+vim.cmd('filetype indent on') --Enable indentation based on file type
 
-
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
--- Editor setttings
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+--  Editor variables
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 set.number = false
 set.relativenumber = true
 set.mouse = 'a'
@@ -42,50 +41,47 @@ set.colorcolumn = '81' --Mark max character width
 -- set.signcolumn = 'no'
 set.timeoutlen = 1000
 set.updatetime = 1000
-vim.cmd[[
+vim.cmd([[
 	" Set undo directory
 	set undodir=~/.cache/.nvim-undo
 	" don't select the first item.
 	set completeopt=menu,menuone,noinsert,noselect
-]]
+]])
 
 
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
--- Key Bindings
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+--  Key Bindings
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 g.mapleader = 'g' --Set map leader to space
--- Unhighlight text using escape key
-vim.cmd'nnoremap <esc> :noh<return><esc>'
+vim.cmd('nnoremap <esc> :noh<return><esc>') -- Unhighlight text using escape key
 
 
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
--- Plugins configuration
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
---[[ Load plugins and their configurations ]]
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+--  Plugins configuration
+-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+-- Load plugins and their configurations 
 require('plugins')
-require('config.edge')
 require('config.sonokai')
+require('config.catppuccin')
 require('config.treesitter')
-require('config.nvim-lualine')
+require('config.lualine')
 require("config.bufferline")
-require('config.lsp')
+require('config.lspconfig')
 require('config.nvim-cmp')
 require('mason').setup()
-require('mason-lspconfig').setup{
+require('mason-lspconfig').setup({
 	 ensure_installed = {
-		'cssls', 'emmet_ls', 'eslint',
-		'html', 'pyright', 'tsserver',
+		'cssls', 'emmet_ls', 'eslint', 'html', 'pyright', 'tsserver',
 	 },
-}
+})
 
-g.rustfmt_autosave = 1 -- On save, formats rust code
+g.rustfmt_autosave = 1 -- On save, format rust code
 
---[[ Syntax Highlighting configuration ]]
 -- Check and enable termguicolors
 if vim.fn.has('termguicolors') == 1 then
   set.termguicolors = true
 end
--- Turn syntax highlighting on
+-- Turn on syntax highlighting
 vim.cmd.syntax('on')
 -- Set colorscheme
-vim.cmd.colorscheme('sonokai')
+vim.cmd.colorscheme('catppuccin')

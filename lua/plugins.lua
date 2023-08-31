@@ -2,38 +2,29 @@
 local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+  vim.api.nvim_command(
+		'!git clone https://github.com/wbthomason/packer.nvim ' .. install_path
+	)
 end
 
-vim.cmd [[packadd packer.nvim]]
+vim.cmd('packadd packer.nvim')
+
 require('packer').startup(function()
 	-- plugin manager
 	use { 'wbthomason/packer.nvim' }
 
 	-- Colorschemes
-	use {
-		'sainnhe/edge',
-		'sainnhe/sonokai',
-		'joshdick/onedark.vim',
-	}
+	use { 'sainnhe/sonokai' }
+	use { "catppuccin/nvim", as = "catppuccin" }
 
 	-- Syntax highlighting
 	use { 'nvim-treesitter/nvim-treesitter' }
 
 	-- Status line plugin
-	use {
-		'nvim-lualine/lualine.nvim',
-		requires = {
-			'nvim-tree/nvim-web-devicons',
-			opt = true
-		}
-	}
+	use { 'nvim-lualine/lualine.nvim', }
 
-	use {
-		'akinsho/bufferline.nvim',
-		tag = "*",
-		requires = 'nvim-tree/nvim-web-devicons'
-	}
+	-- Buffer line
+	use { 'akinsho/bufferline.nvim', tag = "*", }
 
 	-- Nerdtree and icons
 	use {

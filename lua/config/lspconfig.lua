@@ -4,12 +4,11 @@ local nvim_lsp = require('lspconfig')
 local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 
 local servers = {
-	'clangd', 'cssls', 'emmet_ls',
-	'eslint', 'html', 'pyright', 'tsserver',
+	'clangd', 'cssls', 'emmet_ls', 'eslint', 'html', 'pyright', 'tsserver',
 }
 
 for _, server in ipairs(servers) do
-	nvim_lsp[server].setup{ capabilities = capabilities }
+	nvim_lsp[server].setup({ capabilities = capabilities })
 end
 
 -- Rust analyzer config
@@ -28,9 +27,7 @@ nvim_lsp.rust_analyzer.setup({
 			},
 			cargo = { buldScripts = { enable = true }, },
 			procMacro = { enable = true },
-			checkOnSave = {
-				command = 'clippy'
-			}
+			checkOnSave = { command = 'clippy' }
 		}
 	},
 })
