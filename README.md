@@ -10,10 +10,10 @@ To use my configuration, follow these steps:
 1. Clone this repository to your local machine:
 
    ```shell
-   git clone https://github.com/xirlorm/neovim-config.git ~/.config/nvim
+   git clone https://github.com/xirlorm/nvim.git ~/.config/nvim
    ```
 
-2. Make sure you have Neovim installed. You can download it from [Neovim's official website](https://neovim.io/).
+2. Make sure you have Neovim installed. You can download it from [Neovim's official website](https://neovim.io/) or using a Package Manager.
 
 3. Install the required plugins
 
@@ -22,12 +22,8 @@ To use my configuration, follow these steps:
      ```shell
      nvim
      ```
+     Package manager and plugins are automatically installed.
 
-   - Inside Neovim, run the following command to install plugins:
-
-     ```vim
-     :PackerInstall
-     ```
 4. Restart Neovim, and you're all set!
 
 ## Features
@@ -46,7 +42,7 @@ the `init.lua` file or create your own configuration files in the `~/.config/nvi
 
 Here are some of the key plugins I use in my Neovim setup:
 
-- [Packer](https://github.com/wbthomason/packer.nvim): Plugin Manager.
+- [Lazy.nvim](https://github.com/folke/lazy.nvim): Plugin Manager.
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Syntax highlighting.
 - [Neovim-lspconfig](https://github.com/neovim/nvim-lspconfig): LSP(Code completion) configurations
 - [Mason](https://github.com/williamboman/mason.nvim): LSP Manager

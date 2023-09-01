@@ -2,12 +2,9 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'catppuccin',
-    -- component_separators = { left = '', right = ''},
-    -- section_separators = { left = '', right = ''},
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    -- component_separators = { left = '', right = ''},
-    -- section_separators = { left = '', right = ''},
+    --       
+    component_separators = { left = '│', right = '│'},
+    section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
       winbar = {},
@@ -48,33 +45,13 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-	--[[
 	winbar = {},
-	tabline = {
-		lualine_a = {
-			{'buffers',
-				symbols = {
-					modified = ' ✒',
-					alternate_file = '●',
-					directory =  ''
-				},
-				-- show_filename_only = true,
-				hide_filename_extension = false,
-				icons_enabled = true,
-			},
-		},
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {'tabs'},
-		lualine_z = {'filetype'},
-	},
+	tabline = {},
 	inactive_winbar = {},
 	extensions = {
 		'fzf',
 		'nerdtree',
 	},
-	]]
 }
 
 require('lualine').hide {

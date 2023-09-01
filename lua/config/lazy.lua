@@ -50,11 +50,9 @@ require("lazy").setup({
 	-- Rust
 	{ 'rust-lang/rust.vim' },
 
-
 	-- LSP Support
 	{
 		'williamboman/mason.nvim',
-		'williamboman/mason-lspconfig.nvim',
 		dependencies = { 'williamboman/mason-lspconfig.nvim' }
 	},
 

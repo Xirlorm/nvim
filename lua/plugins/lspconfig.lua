@@ -4,7 +4,7 @@ local nvim_lsp = require('lspconfig')
 local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 
 local servers = {
-	'clangd', 'cssls', 'eslint', 'html', 'pyright', 'tsserver',
+	'clangd', 'cssls', 'emmet_ls', 'eslint', 'html', 'pyright', 'tsserver',
 }
 
 for _, server in ipairs(servers) do
