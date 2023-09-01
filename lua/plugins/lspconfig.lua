@@ -4,7 +4,7 @@ local nvim_lsp = require('lspconfig')
 local capabilities = require'cmp_nvim_lsp'.default_capabilities()
 
 local servers = {
-	'clangd', 'cssls', 'emmet_ls', 'eslint', 'html', 'pyright', 'tsserver',
+	'clangd', 'cssls', 'eslint', 'html', 'pyright', 'tsserver',
 }
 
 for _, server in ipairs(servers) do
@@ -33,6 +33,7 @@ nvim_lsp.rust_analyzer.setup({
 })
 
 local signs = { Error = "✖", Warn = "", Hint = " ", Info = "ℹ " } 
+
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl= hl, numhl = hl })
