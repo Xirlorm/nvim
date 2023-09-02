@@ -54,3 +54,10 @@ vim.cmd([[
 -- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 g.mapleader = 'g' --Set map leader to space
 vim.cmd('nnoremap <esc> :noh<return><esc>') -- Unhighlight text using escape key
+
+function OpenTerminal()
+    local height = vim.o.lines * 0.25
+    vim.cmd('belowright ' .. height .. 'split term://bash')
+end
+
+vim.api.nvim_set_keymap('n', '<Leader>t', ':lua OpenTerminal()<CR>', { noremap = true, silent = true })

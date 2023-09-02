@@ -1,5 +1,5 @@
-require('config.options');
-require('config.lazy');
+require('config.options')
+require('config.lazy')
 require('plugins.catppuccin')
 require('plugins.treesitter')
 require('plugins.lspconfig')
@@ -28,4 +28,4 @@ end
 -- Turn on syntax highlighting
 vim.cmd.syntax('on')
 -- Set colorscheme
-vim.cmd.colorscheme('catppuccin-frappe')
+vim.cmd.colorscheme('catppuccin-macchiato')
