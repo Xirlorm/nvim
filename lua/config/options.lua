@@ -1,5 +1,4 @@
 local set = vim.opt
-local g = vim.g
 
 set.compatible = false --Enable vim features unavailable in vi
 vim.cmd('filetype on') --Enable filetype detection
@@ -41,23 +40,10 @@ set.colorcolumn = '81' --Mark max character width
 set.signcolumn = 'yes'
 -- set.timeoutlen = 1000
 -- set.updatetime = 1000
-vim.cmd([[
-	" Set undo directory
-	set undodir=~/.cache/.nvim-undo
-	" don't select the first item.
-	set completeopt=menu,menuone,noinsert,noselect
-]])
+set.undodir = vim.fn.expand('~/.cache/.nvim-undo') -- Set undo directory
+set.completeopt = 'menu,menuone,noinsert,noselect' -- don't select the first item.
 
-
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
---  Key Bindings
--- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-g.mapleader = 'g' --Set map leader to space
-vim.cmd('nnoremap <esc> :noh<return><esc>') -- Unhighlight text using escape key
-
-function OpenTerminal()
-    local height = vim.o.lines * 0.25
-    vim.cmd('belowright ' .. height .. 'split term://bash')
+-- Check and enable termguicolors
+if vim.fn.has('termguicolors') == 1 then
+  set.termguicolors = true
 end
-
-vim.api.nvim_set_keymap('n', '<Leader>t', ':lua OpenTerminal()<CR>', { noremap = true, silent = true })
