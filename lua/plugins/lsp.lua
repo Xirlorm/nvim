@@ -1,7 +1,7 @@
 return {
 	{
 		'neovim/nvim-lspconfig',
-		'hrsh7th/cmp-nvim-lsp',
+		dependencies = {'hrsh7th/cmp-nvim-lsp'},
 		config = function()
 			-- Setup language servers.
 			local nvim_lsp = require('lspconfig')
