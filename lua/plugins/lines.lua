@@ -2,7 +2,6 @@ return {
 	{
 		'akinsho/bufferline.nvim',
 		version = "*",
-		event = 'VeryLazy',
 		init = function()
 			local bufferline = require('bufferline')
 			bufferline.setup({
@@ -30,7 +29,6 @@ return {
 	},
 	{
 		'nvim-lualine/lualine.nvim',
-		event = 'VeryLazy',
 		opts = {
 			options = {
 				icons_enabled = true,

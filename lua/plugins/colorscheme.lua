@@ -59,7 +59,7 @@ return {
 			-- Turn on syntax highlighting
 			vim.cmd.syntax('on')
 			-- Set colorscheme
-			vim.cmd.colorscheme('catppuccin-macchiato')
+			vim.cmd.colorscheme('catppuccin-frappe')
 		end,
 	},
 }
