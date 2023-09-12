@@ -35,7 +35,7 @@ set.nrformats = 'bin' --Use binary increment and decrement
 set.encoding = 'utf-8'
 set.redrawtime = 800
 set.undofile = true --Enable persistent undo
--- set.omnifunc = 'syntaxcomplete#Complete' --Neovim completion
+set.omnifunc = 'syntaxcomplete#Complete' --Neovim completion
 set.colorcolumn = '81' --Mark max character width
 set.signcolumn = 'yes'
 -- set.timeoutlen = 1000
@@ -44,6 +44,4 @@ set.undodir = vim.fn.expand('~/.cache/.nvim-undo') -- Set undo directory
 set.completeopt = 'menu,menuone,noinsert,noselect' -- don't select the first item.
 
 -- Check and enable termguicolors
-if vim.fn.has('termguicolors') == 1 then
-  set.termguicolors = true
-end
+if vim.fn.has('termguicolors') == 1 then set.termguicolors = true end
