@@ -1,4 +1,5 @@
 local set = vim.opt
+local g = vim.g
 
 set.compatible = false --Enable vim features unavailable in vi
 vim.cmd('filetype on') --Enable filetype detection
@@ -42,6 +43,8 @@ set.signcolumn = 'yes'
 -- set.updatetime = 1000
 set.undodir = vim.fn.expand('~/.cache/.nvim-undo') -- Set undo directory
 set.completeopt = 'menu,menuone,noinsert,noselect' -- don't select the first item.
+g.mapleader = ' ' --Set map leader to space
+g.rustfmt_autosave = 1 -- On save, format rust code
 
 -- Check and enable termguicolors
 if vim.fn.has('termguicolors') == 1 then set.termguicolors = true end
