@@ -1,4 +1,4 @@
 return {
 	"folke/lazy.nvim",
-	opts = { colorscheme = 'catppuccin-macchiato' },
+	opts = { colorscheme = "catppuccin" },
 }

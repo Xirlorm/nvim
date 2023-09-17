@@ -1,15 +1,15 @@
 return {
 	{
-		'akinsho/bufferline.nvim',
+		"akinsho/bufferline.nvim",
 		version = "*",
 		init = function()
-			local bufferline = require('bufferline')
+			local bufferline = require("bufferline")
 			bufferline.setup({
 				options = {
 					themable = false,
 					indicator = {
-							icon = '▎', -- this should be omitted if indicator style is not 'icon'
-							style = 'icon', -- | 'underline' | 'none',
+							icon = "▎", -- this should be omitted if indicator style is not "icon"
+							style = "icon", -- | "underline" | "none",
 					},
 					style_preset = {
 						bufferline.style_preset.no_italic,
@@ -28,14 +28,14 @@ return {
 		end
 	},
 	{
-		'nvim-lualine/lualine.nvim',
+		"nvim-lualine/lualine.nvim",
 		opts = {
 			options = {
 				icons_enabled = true,
-				theme = 'catppuccin',
+				theme = "catppuccin",
 				--       
-				component_separators = { left = '│', right = '│'},
-				section_separators = { left = '', right = ''},
+				component_separators = { left = "│", right = "│"},
+				section_separators = { left = "", right = ""},
 				disabled_filetypes = {
 					statusline = {},
 					winbar = {},
@@ -50,31 +50,31 @@ return {
 				},
 			},
 			sections = {
-				lualine_a = {'mode'},
+				lualine_a = {"mode"},
 				lualine_b = {
-					{'branch'},
-					{'diff'},
-					{'diagnostics',
-						sources = {'nvim_lsp'},
-						sections = { 'error', 'warn', 'info', 'hint' },
+					{"branch"},
+					{"diff"},
+					{"diagnostics",
+						sources = {"nvim_lsp"},
+						sections = { "error", "warn", "info", "hint" },
 
-						symbols = {error = '✖:', warn = ':', info = 'ℹ:', hint = ':'},
+						symbols = {error = "✖:", warn = ":", info = "ℹ:", hint = ":"},
 						colored = true,
 						update_in_insert = false,
 					}
 				},
-				lualine_c = {'selectioncount'},
-				lualine_x = {'encoding', 'fileformat', 'filetype'},
-				lualine_y = {'progress'},
-				lualine_z = {'location'}
+				lualine_c = {"selectioncount"},
+				lualine_x = {"encoding", "fileformat", "filetype"},
+				lualine_y = {"progress"},
+				lualine_z = {"location"}
 			},
 			inactive_sections = {
-				lualine_c = {'filename'},
-				lualine_x = {'location'},
+				lualine_c = {"filename"},
+				lualine_x = {"location"},
 			},
 			extensions = {
-				'fzf',
-				'nerdtree',
+				"fzf",
+				"nerdtree",
 			},
 		},
 	},
