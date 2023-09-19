@@ -1,4 +1,1 @@
-return {
-	"folke/lazy.nvim",
-	opts = { colorscheme = "catppuccin" },
-}
+return { "folke/lazy.nvim", lazy = true }

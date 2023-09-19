@@ -1,7 +1,11 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
-		dependencies = {"hrsh7th/cmp-nvim-lsp"},
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			event = "InsertEnter",
+		},
 		config = function()
 			-- Setup language servers.
 			local nvim_lsp = require("lspconfig")
@@ -53,10 +57,12 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
+		lazy = true,
 		opts = {},
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		event = "VeryLazy",
 		opts = {
 			ensure_installed = {
 				"html",

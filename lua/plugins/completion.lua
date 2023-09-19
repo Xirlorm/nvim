@@ -6,8 +6,9 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		event = "VeryLazy",
+		event = "InsertEnter",
 		dependencies = {
+			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
@@ -17,11 +18,9 @@ return {
 			event = "VeryLazy",
 		},
 		config = function()
-			-- luasnip setup
-			local luasnip = require "luasnip"
+			local luasnip = require("luasnip")
+			local cmp = require("cmp")
 
-			-- nvim-cmp setup
-			local cmp = require "cmp"
 			cmp.setup {
 				snippet = {
 					expand = function(args)

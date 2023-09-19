@@ -1,7 +1,7 @@
 return {
 	{
 		"sainnhe/sonokai",
-		event = "VeryLazy",
+		lazy = "true",
 		config = function()
 			local g = vim.g
 			-- andromeda, maia, atlantis, shusia, espresso
@@ -22,39 +22,19 @@ return {
 		event = "VeryLazy",
 		priority = 1000,
 		opts = {
-				flavour = "frappe",
-				background = {
-						light = "latte",
-						dark = "frappe",
-				},
-				transparent_background = false,
 				show_end_of_buffer = true,
 				term_colors = true,
-				dim_inactive = {
-					enabled = true,
-					shade = "dark",
-					percentage = 0.15,
-				},
+				dim_inactive = { enabled = true, },
 				no_italic = false,
 				no_bold = false,
-				no_underline = false,
 				styles = {
 						comments = { "italic" },
-						conditionals = {},
-						loops = {},
-						functions = {},
 						keywords = { "italic" },
-						strings = {},
-						variables = { "italic" },
-						numbers = {},
-						booleans = {},
 						properties = { "italic" },
 						types = { "italic" },
-						operators = {},
 				},
 				integrations = {
 					cmp = true,
-					gitsigns = true,
 					nvimtree = true,
 					treesitter = true,
 					bufferline = true,
@@ -64,7 +44,7 @@ return {
 			-- Turn on syntax highlighting
 			vim.cmd.syntax("on")
 			-- Set colorscheme
-			vim.cmd.colorscheme("catppuccin-frappe")
+			vim.cmd.colorscheme("catppuccin-macchiato")
 		end,
 	},
 }

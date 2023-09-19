@@ -1,6 +1,7 @@
 return {
 	{
 		"akinsho/bufferline.nvim",
+		event = "VeryLazy",
 		version = "*",
 		init = function()
 			local bufferline = require("bufferline")
@@ -8,15 +9,15 @@ return {
 				options = {
 					themable = false,
 					indicator = {
-							icon = "▎", -- this should be omitted if indicator style is not "icon"
-							style = "icon", -- | "underline" | "none",
+							icon = "▎",
+							style = "icon",
 					},
 					style_preset = {
 						bufferline.style_preset.no_italic,
 						bufferline.style_preset.no_bold,
 					},
 					separator_style = "thick",
-					name_formatter = function(buf)  -- buf contains:
+					name_formatter = function(buf)
 						return "" .. buf.bufnr .. " " .. buf.name
 					end,
 					max_name_length = 18,
@@ -29,6 +30,8 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+		version = "*",
 		opts = {
 			options = {
 				icons_enabled = true,
@@ -60,7 +63,7 @@ return {
 
 						symbols = {error = "✖:", warn = ":", info = "ℹ:", hint = ":"},
 						colored = true,
-						update_in_insert = false,
+						update_in_insert = true,
 					}
 				},
 				lualine_c = {"selectioncount"},
