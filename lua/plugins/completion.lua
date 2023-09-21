@@ -6,7 +6,7 @@ return {
 	},
 	{
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
+		event = "VeryLazy",
 		dependencies = {
 			"neovim/nvim-lspconfig",
 			"hrsh7th/cmp-nvim-lsp",
@@ -15,7 +15,6 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
-			event = "VeryLazy",
 		},
 		config = function()
 			local luasnip = require("luasnip")
@@ -28,8 +27,8 @@ return {
 					end,
 				},
 				window = {
-					completion = cmp.config.window.bordered(),
-					documentation = cmp.config.window.bordered(),
+					-- completion = cmp.config.window.bordered(),
+					-- documentation = cmp.config.window.bordered(),
 				},
 				mapping = cmp.mapping.preset.insert({
 					["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up

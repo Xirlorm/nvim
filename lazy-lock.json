@@ -20,6 +20,5 @@
   "nvim-tree.lua": { "branch": "master", "commit": "a3aa3b47eac8b6289f028743bef4ce9eb0f6782e" },
   "nvim-treesitter": { "branch": "master", "commit": "940916074833159bf7b8cbb4bf5e59161461fa5a" },
   "nvim-web-devicons": { "branch": "master", "commit": "973ab742f143a796a779af4d786ec409116a0d87" },
-  "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" },
-  "sonokai": { "branch": "master", "commit": "17308ee6d9c764bfc1e0fa97213e7a99701b4144" }
+  "rust.vim": { "branch": "master", "commit": "889b9a7515db477f4cb6808bef1769e53493c578" }
 }

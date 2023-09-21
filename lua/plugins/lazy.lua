@@ -1,1 +1,1 @@
-return { "folke/lazy.nvim", lazy = true }
+return { "folke/lazy.nvim" }

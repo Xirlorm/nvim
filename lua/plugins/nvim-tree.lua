@@ -1,7 +1,9 @@
 return {
 	"nvim-tree/nvim-tree.lua",
 	event = "VeryLazy",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
 	opts = {
 		sort_by = "case_sensitive",
 		view = {
