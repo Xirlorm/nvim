@@ -18,7 +18,13 @@ return {
 				"clangd",
 			}
 
+			for _, server in ipairs(servers) do
+				lspconfig[server].setup({ capabilities = capabilities })
+			end
+
+			-- Eslint configuration
 			lspconfig.eslint.setup({
+				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					vim.api.nvim_create_autocmd("BufWritePre", {
 						buffer = bufnr,
@@ -27,30 +33,26 @@ return {
 				end,
 			})
 
-			for _, server in ipairs(servers) do
-				lspconfig[server].setup({ capabilities = capabilities })
-			end
+			-- Rust analyzer configuration
+			-- local on_attach = function(client)
+			-- 		require"completion".on_attach(client)
+			-- end
 
-			-- Rust analyzer config
-			local on_attach = function(client)
-					require"completion".on_attach(client)
-			end
-
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-				settings = {
-					["rust-analyzer"] = {
-						imports = {
-							granularity = { group = "module" },
-							prefix = "self",
-						},
-						cargo = { buldScripts = { enable = true }, },
-						procMacro = { enable = true },
-						checkOnSave = { command = "clippy" }
-					}
-				},
-			})
+			-- lspconfig.rust_analyzer.setup({
+			-- 	capabilities = capabilities,
+			-- 	on_attach = on_attach,
+			-- 	settings = {
+			-- 		["rust-analyzer"] = {
+			-- 			imports = {
+			-- 				granularity = { group = "module" },
+			-- 				prefix = "self",
+			-- 			},
+			-- 			cargo = { buldScripts = { enable = true }, },
+			-- 			procMacro = { enable = true },
+			-- 			checkOnSave = { command = "clippy" }
+			-- 		}
+			-- 	},
+			-- })
 
 			-- Global mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
