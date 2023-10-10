@@ -24,14 +24,16 @@ To use my configuration, follow these steps:
      ```
      Package manager and plugins are automatically installed.
 
-4. Restart Neovim, and you're all set!
+4. Restart Neovim, You're all set!
 
 ## Features
 
-- Syntax highlighting and code completion for various programming languages.
+- Syntax highlighting
+- Code completion for various programming languages.
 - A clean and simple user interface.
-- Integration with popular development tools.
-- Automatic plugin manager installation.
+- Integration with development tools.
+- Automatic plugin installation.
+- File explorer (disabled by default)
 
 ## Customization
 
@@ -42,21 +44,26 @@ the `init.lua` file or create your own configuration files in the `~/.config/nvi
 
 Here are some of the key plugins I use in my Neovim setup:
 
+- [Catppuccin](https://github.com/catppuccin/nvim): Colorscheme
 - [Lazy.nvim](https://github.com/folke/lazy.nvim): Plugin Manager.
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Syntax highlighting.
 - [Neovim-lspconfig](https://github.com/neovim/nvim-lspconfig): LSP(Code completion) configurations
 - [Mason](https://github.com/williamboman/mason.nvim): LSP Manager
-- [Rust plugin](https://github.com/rust-lang/rust.vim)
+- [Rust plugin](https://github.com/rust-lang/rust.vim) (disabled)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim): Status line
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+
+NB: Some plugins not mentioned above are disabled
 
 ## Language Server
 
-These are LSP(language server protocols) installed automatically:
+These are the LSPs(language server protocols) installed automatically:
 
 - `html`: HTML
 - `cssls`: CSS
-- `emmet_ls`: Emmet(HTML completion)
+- `cssmodules_ls`
+- `emmet_language_server`: Emmet(HTML completion)
 - `eslint`: JavaScript
 - `pyright`: Python
 - `tsserver`: TypeScript

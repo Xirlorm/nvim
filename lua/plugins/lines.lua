@@ -1,32 +1,33 @@
 return {
-	{
-		"akinsho/bufferline.nvim",
-		event = "VeryLazy",
-		version = "*",
-		init = function()
-			local bufferline = require("bufferline")
-			bufferline.setup({
-				options = {
-					themable = false,
-					indicator = {
-							icon = "▎",
-							style = "icon",
-					},
-					style_preset = {
-						bufferline.style_preset.no_italic,
-						bufferline.style_preset.no_bold,
-					},
-					separator_style = "thick",
-					name_formatter = function(buf)
-						return "" .. buf.bufnr .. " " .. buf.name
-					end,
-					max_name_length = 18,
-					truncate_names = true,
-					diagnostics = "nvim_lsp",
-					color_icons = true;
-				}
-			})
-		end
+	{ 
+		 "akinsho/bufferline.nvim", 
+		 enabled = false,
+		 event = "VeryLazy", 
+		 version = "*", 
+		 init = function() 
+			 local bufferline = require("bufferline") 
+			 bufferline.setup({ 
+				 options = { 
+					 themable = false, 
+					 indicator = { 
+													 icon = "▎", 
+													 style = "icon", 
+					 }, 
+					 style_preset = { 
+									 bufferline.style_preset.no_italic, 
+									 bufferline.style_preset.no_bold, 
+					 }, 
+					 separator_style = "thick", 
+					 name_formatter = function(buf) 
+									 return "" .. buf.bufnr .. " " .. buf.name 
+					 end, 
+					 max_name_length = 18, 
+					 truncate_names = true, 
+					 diagnostics = "nvim_lsp", 
+					 color_icons = true; 
+				 } 
+			 }) 
+		 end 
 	},
 	{
 		"nvim-lualine/lualine.nvim",

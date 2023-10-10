@@ -13,6 +13,7 @@ return {
 				"html",
 				"emmet_language_server",
 				"cssls",
+				"cssmodules_ls",
 				"tsserver",
 				"pyright",
 				"clangd",
@@ -24,7 +25,6 @@ return {
 
 			-- Eslint configuration
 			lspconfig.eslint.setup({
-				capabilities = capabilities,
 				on_attach = function(client, bufnr)
 					vim.api.nvim_create_autocmd("BufWritePre", {
 						buffer = bufnr,
@@ -92,7 +92,7 @@ return {
 				end,
 			})
 
-			local signs = { Error = "✖", Warn = "", Hint = " ", Info = "ℹ " } 
+			local signs = { Error = "✖", Warn = "", Hint = " ", Info = "ℹ " }
 
 			for type, icon in pairs(signs) do
 					local hl = "DiagnosticSign" .. type
@@ -111,6 +111,7 @@ return {
 				"html",
 				"emmet_language_server",
 				"cssls",
+				"cssmodules_ls",
 				"eslint",
 				"tsserver",
 				"pyright",

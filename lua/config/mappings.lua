@@ -12,7 +12,7 @@ end
 
 vim.api.nvim_set_keymap('n', '<Leader>t', ':lua OpenTerminal()<CR>', { noremap = true, silent = true })
 
---[[ Check if the current buffer is a C++ file ]]
+--[[ Compile and run current C++ buffer ]]
 function CompileAndRunCpp()
 	if vim.bo.filetype == 'cpp' then
 		local output = vim.fn.expand('%:t:r')
