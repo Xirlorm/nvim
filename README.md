@@ -52,7 +52,7 @@ Here are some of the key plugins I use in my Neovim setup:
 - [Rust plugin](https://github.com/rust-lang/rust.vim) (disabled)
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [Lualine](https://github.com/nvim-lualine/lualine.nvim): Status line
-- [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [Telescope](https://github.com/nvim-telescope/telescope.nvim) (disabled)
 
 NB: Some plugins not mentioned above are disabled
 

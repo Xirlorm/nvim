@@ -48,3 +48,5 @@ g.rustfmt_autosave = 1 -- On save, format rust code
 
 -- Check and enable termguicolors
 if vim.fn.has('termguicolors') == 1 then set.termguicolors = true end
+-- Turn on syntax highlighting
+vim.cmd.syntax("on")

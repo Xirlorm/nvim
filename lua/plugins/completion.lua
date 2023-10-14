@@ -2,7 +2,11 @@ return {
 	{
 		"mattn/emmet-vim",
 		lazy = true,
-		ft = "html",
+		ft = {
+			"html",
+			"javascriptreact",
+			"typescriptreact"
+		},
 	},
 	{
 		"hrsh7th/nvim-cmp",

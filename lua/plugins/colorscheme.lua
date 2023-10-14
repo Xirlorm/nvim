@@ -21,10 +21,4 @@ return {
 			bufferline = true,
 		},
 	},
-	init = function()
-		-- Turn on syntax highlighting
-		vim.cmd.syntax("on")
-		-- Set colorscheme
-		vim.cmd.colorscheme("catppuccin-macchiato")
-	end,
 }
