@@ -17,6 +17,7 @@ return {
 				"tsserver",
 				"pyright",
 				"clangd",
+				"tailwindcss",
 			}
 
 			for _, server in ipairs(servers) do
