@@ -10,7 +10,7 @@ To use my configuration, follow these steps:
 1. Clone this repository to your local machine:
 
    ```shell
-   git clone https://github.com/xirlorm/nvim.git ~/.config/nvim
+   git clone https://github.com/xirlorm/nvim ~/.config/nvim
    ```
 
 2. Make sure you have Neovim installed. You can download it from [Neovim's official website](https://neovim.io/) or using a Package Manager.
