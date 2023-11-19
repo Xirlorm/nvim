@@ -1,6 +1,5 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	event = "VeryLazy",
 	build = ":TSUpdate",
 	config = function()
 		require"nvim-treesitter.configs".setup {
@@ -13,6 +12,7 @@ return {
 				"css",
 				"python",
 				"markdown",
+				"tsx",
 				"bash",
 			},
 			sync_install = false,

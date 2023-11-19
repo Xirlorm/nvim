@@ -13,11 +13,11 @@ return {
 				"html",
 				"emmet_language_server",
 				"cssls",
-				"cssmodules_ls",
+				-- "cssmodules_ls",
 				"tsserver",
 				"pyright",
 				"clangd",
-				"tailwindcss",
+				-- "tailwindcss",
 			}
 
 			for _, server in ipairs(servers) do
@@ -25,14 +25,14 @@ return {
 			end
 
 			-- Eslint configuration
-			lspconfig.eslint.setup({
-				on_attach = function(client, bufnr)
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						buffer = bufnr,
-						command = "EslintFixAll",
-					})
-				end,
-			})
+			-- lspconfig.eslint.setup({
+			-- 	on_attach = function(client, bufnr)
+			-- 		vim.api.nvim_create_autocmd("BufWritePre", {
+			-- 			buffer = bufnr,
+			-- 			command = "EslintFixAll",
+			-- 		})
+			-- 	end,
+			-- })
 
 			-- Rust analyzer configuration
 			-- local on_attach = function(client)
@@ -105,10 +105,10 @@ return {
 				"html",
 				"emmet_language_server",
 				"cssls",
-				"cssmodules_ls",
-				"eslint",
+				-- "cssmodules_ls",
 				"tsserver",
 				"pyright",
+				-- "tailwindcss",
 			},
 		},
 	},
