@@ -21,4 +21,8 @@ return {
 			bufferline = true,
 		},
 	},
+	cmd = function()
+		-- Set colorschme
+		vim.cmd("colorscheme catppuccin-macchiato")
+	end
 }

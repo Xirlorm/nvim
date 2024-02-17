@@ -13,6 +13,7 @@ return {
 				"python",
 				"markdown",
 				"tsx",
+				"rust",
 				"bash",
 			},
 			sync_install = false,

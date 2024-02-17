@@ -43,10 +43,11 @@ set.signcolumn = 'yes'
 -- set.updatetime = 1000
 set.undodir = vim.fn.expand('~/.cache/.nvim-undo') -- Set undo directory
 set.completeopt = 'menu,menuone,noinsert,noselect' -- don't select the first item.
+set.list = false
 g.mapleader = ' ' --Set map leader to space
 g.rustfmt_autosave = 1 -- On save, format rust code
 
 -- Check and enable termguicolors
 if vim.fn.has('termguicolors') == 1 then set.termguicolors = true end
 -- Turn on syntax highlighting
-vim.cmd.syntax("on")
+vim.cmd("syntax on")
