@@ -109,6 +109,7 @@ return {
 				"tsserver",
 				"pyright",
 				"tailwindcss",
+				"eslint",
 			},
 		},
 	},

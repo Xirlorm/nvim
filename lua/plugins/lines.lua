@@ -1,31 +1,28 @@
 return {
-	{ 
-		 "akinsho/bufferline.nvim", 
-		 version = "*", 
-		 init = function() 
-			 local bufferline = require("bufferline") 
-			 bufferline.setup({ 
-				 options = { 
-					 themable = false, 
-					 indicator = { 
-													 icon = "▎", 
-													 style = "icon", 
-					 }, 
-					 style_preset = { 
-									 bufferline.style_preset.no_italic, 
-									 bufferline.style_preset.no_bold, 
-					 }, 
-					 separator_style = "thick", 
-					 name_formatter = function(buf) 
-									 return "" .. buf.bufnr .. " " .. buf.name 
-					 end, 
-					 max_name_length = 18, 
-					 truncate_names = true, 
-					 diagnostics = "nvim_lsp", 
-					 color_icons = true; 
-				 } 
-			 }) 
-		 end 
+	{
+		"akinsho/bufferline.nvim", 
+		version = "*", 
+		init = function() 
+			local bufferline = require("bufferline") 
+			bufferline.setup({ 
+				options = { 
+					themable = false, 
+					indicator = { icon = "▎", style = "icon", }, 
+					style_preset = { 
+						bufferline.style_preset.no_italic, 
+						bufferline.style_preset.no_bold, 
+					}, 
+					separator_style = "thick", 
+					name_formatter = function(buf) 
+						return "" .. buf.bufnr .. " " .. buf.name 
+					end, 
+					max_name_length = 18, 
+					truncate_names = true, 
+					diagnostics = "nvim_lsp", 
+					color_icons = true; 
+				} 
+			}) 
+		end 
 	},
 	{
 		"nvim-lualine/lualine.nvim",
@@ -36,19 +33,12 @@ return {
 				theme = "catppuccin",
 				--       
 				component_separators = { left = "│", right = "│"},
-				section_separators = { left = "", right = ""},
-				disabled_filetypes = {
-					statusline = {},
-					winbar = {},
-				},
+				section_separators = { left = "", right = "" },
+				disabled_filetypes = { statusline = {}, winbar = {}, },
 				ignore_focus = {},
 				always_divide_middle = true,
 				globalstatus = false,
-				refresh = {
-					statusline = 1000,
-					tabline = 1000,
-					winbar = 1000
-				},
+				refresh = { statusline = 1000, tabline = 1000, winbar = 1000 },
 			},
 			sections = {
 				lualine_a = {"mode"},
@@ -59,7 +49,8 @@ return {
 						sources = {"nvim_lsp"},
 						sections = { "error", "warn", "info", "hint" },
 
-						symbols = {error = "✖:", warn = ":", info = "ℹ:", hint = ":"},
+						-- 
+						symbols = {error = "✖:", warn = ":", info = "ℹ:", hint = "h:"},
 						colored = true,
 						update_in_insert = true,
 					}
@@ -73,10 +64,7 @@ return {
 				lualine_c = {"filename"},
 				lualine_x = {"location"},
 			},
-			extensions = {
-				"fzf",
-				"nerdtree",
-			},
+			extensions = { "fzf", "nerdtree" },
 		},
 	},
 }
