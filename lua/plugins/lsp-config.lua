@@ -18,6 +18,7 @@ return {
 				"pyright",
 				"clangd",
 				"tailwindcss",
+				"java_language_server",
 			}
 
 			for _, server in ipairs(servers) do
@@ -38,6 +39,26 @@ return {
 			local on_attach = function(client)
 					require"completion".on_attach(client)
 			end
+
+			-- Dart lsp configuration
+			lspconfig.dartls.setup({ 
+				capabilities = capabilities,
+				cmd = { '/home/sailor/Apps/flutter/bin/dart', 'language-server', '--protocol=lsp' },
+				filetypes = { 'dart' },
+				settings = {
+					dart = {
+						completeFunctionCalls = true,
+						showTodos = true,
+					},
+				},
+				init_options = {
+					closingLabels = true,
+					flutterOutline = true,
+					onlyAnalyzeProjectsWithOpenFiles = true,
+					outline = true,
+					suggestFromUnimportedLibraries = true
+				}
+			})
 
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
