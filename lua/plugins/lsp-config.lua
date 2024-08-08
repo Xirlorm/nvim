@@ -43,7 +43,7 @@ return {
 			-- Dart lsp configuration
 			lspconfig.dartls.setup({ 
 				capabilities = capabilities,
-				cmd = { '/home/sailor/Apps/flutter/bin/dart', 'language-server', '--protocol=lsp' },
+				cmd = { 'dart', 'language-server', '--protocol=lsp' },
 				filetypes = { 'dart' },
 				settings = {
 					dart = {
