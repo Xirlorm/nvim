@@ -18,7 +18,7 @@ return {
 				"pyright",
 				"clangd",
 				"tailwindcss",
-				"java_language_server",
+				"jdtls",
 			}
 
 			for _, server in ipairs(servers) do
