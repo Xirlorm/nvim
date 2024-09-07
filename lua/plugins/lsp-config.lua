@@ -14,7 +14,7 @@ return {
 				"emmet_language_server",
 				"cssls",
 				"cssmodules_ls",
-				"tsserver",
+				"ts_ls",
 				"pyright",
 				"clangd",
 				"tailwindcss",
