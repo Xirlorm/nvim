@@ -35,11 +35,6 @@ return {
 				end,
 			})
 
-			-- Rust analyzer configuration
-			local on_attach = function(client)
-					require"completion".on_attach(client)
-			end
-
 			-- Dart lsp configuration
 			lspconfig.dartls.setup({ 
 				capabilities = capabilities,
@@ -60,9 +55,14 @@ return {
 				}
 			})
 
+			-- Rust analyzer configuration
+			local on_attach = function(client)
+				require'completion'.on_attach(client)
+			end
+
 			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
 				on_attach = on_attach,
+				capabilities = capabilities,
 				settings = {
 					["rust-analyzer"] = {
 						imports = {
@@ -127,7 +127,7 @@ return {
 				"emmet_language_server",
 				"cssls",
 				"cssmodules_ls",
-				"tsserver",
+				"ts_ls",
 				"pyright",
 				"tailwindcss",
 				"eslint",
