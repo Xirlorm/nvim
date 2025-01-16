@@ -69,7 +69,7 @@ return {
 							granularity = { group = "module" },
 							prefix = "self",
 						},
-						cargo = { buldScripts = { enable = true }, },
+						cargo = { buildScripts = { enable = true }, },
 						procMacro = { enable = true },
 						checkOnSave = { command = "clippy" }
 					}
