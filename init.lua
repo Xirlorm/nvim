@@ -1,5 +1,5 @@
-require('settings.options')
-require('settings.lazy')
-require('settings.mappings')
-require('settings.diagnostics')
+require('config.options')
+require('config.lazy')
+require('config.mappings')
+require('config.diagnostics')
 

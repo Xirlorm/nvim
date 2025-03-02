@@ -3,3 +3,4 @@ return {
 	event = "BufEnter",
 	opts = {},
 }
+

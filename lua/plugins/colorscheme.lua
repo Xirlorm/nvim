@@ -5,7 +5,7 @@ return {
 	opts = {
 		show_end_of_buffer = true,
 		term_colors = true,
-		dim_inactive = { enabled = true, },
+		dim_inactive = { enabled = true },
 		no_italic = false,
 		no_bold = false,
 		styles = {
@@ -26,3 +26,4 @@ return {
 		vim.cmd("colorscheme catppuccin-mocha")
 	end
 }
+
