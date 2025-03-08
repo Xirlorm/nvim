@@ -9,9 +9,6 @@ return {
 
 		local capabilities = require"cmp_nvim_lsp".default_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
-		local on_attach = function(client)
-			require'completion'.on_attach(client)
-		end
 
 
 		local servers = {
@@ -40,9 +37,12 @@ return {
 		})
 
 		-- Rust analyzer configuration
+		-- local on_attach = function(client)
+		-- 	require'completion'.on_attach(client)
+		-- end
+
 		lspconfig.rust_analyzer.setup({
-			on_attach = on_attach,
-			capabilities = capabilities,
+			-- on_attach = on_attach,
 			settings = {
 				["rust-analyzer"] = {
 					imports = {
