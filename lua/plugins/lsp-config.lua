@@ -20,6 +20,8 @@ return {
 			"pyright",
 			"clangd",
 			"tailwindcss",
+			"jdtls",
+			"gopls",
 		}
 
 		for _, server in ipairs(servers) do
@@ -54,6 +56,26 @@ return {
 					checkOnSave = { command = "clippy" }
 				}
 			},
+		})
+
+		-- Dart lsp configuration
+		lspconfig.dartls.setup({ 
+			capabilities = capabilities,
+			cmd = { '/home/sailor/Apps/flutter/bin/dart', 'language-server', '--protocol=lsp' },
+			filetypes = { 'dart' },
+			settings = {
+				dart = {
+					completeFunctionCalls = true,
+					showTodos = true,
+				},
+			},
+			init_options = {
+				closingLabels = true,
+				flutterOutline = true,
+				onlyAnalyzeProjectsWithOpenFiles = true,
+				outline = true,
+				suggestFromUnimportedLibraries = true
+			}
 		})
 
 		-- Global mappings.
