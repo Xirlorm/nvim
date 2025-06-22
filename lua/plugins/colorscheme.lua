@@ -23,7 +23,7 @@ return {
 	},
 	cmd = function()
 		-- Set colorschme
-		vim.cmd("colorscheme catppuccin-mocha")
+		vim.cmd("colorscheme catppuccin-macchiato")
 	end
 }
 
