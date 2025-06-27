@@ -1,20 +1,22 @@
--- Show line diagnostics in hover window
-vim.diagnostic.config({ virtual_text = false, float = { source = 'always' }})
+-- Configure diagnostics
+vim.diagnostic.config({
+	virtual_text = false,
+	float = { source = "always" },
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "✖",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.HINT] = "💡",
+			[vim.diagnostic.severity.INFO] = "",
+		},
+	},
+})
+
+-- Show diagnostics in a hover window on CursorHold
 vim.o.updatetime = 250
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
-  callback = function ()
-    vim.diagnostic.open_float(nil, {focusable = false, scope = "cursor"})
-  end
+	group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
+	callback = function()
+		vim.diagnostic.open_float(nil, { focusable = false, scope = "cursor" })
+	end,
 })
--- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focusable = false })]]
-
--- Diagnostic signs
-local signs = { Error = "✖", Warn = "", Hint = "💡", Info = "" }
-
--- Set diagnostic signs
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, numhl = hl })
-end
-
