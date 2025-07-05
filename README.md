@@ -5,12 +5,31 @@ plugins, and customizations I use to make Neovim my code and text editing tool.
 
 ## Features
 
+- Automatic plugin installation
+- Clean and simple configuration
 - Syntax highlighting
-- Code completion for various programming languages.
-- A clean and simple user interface.
-- Integration with development tools.
-- Automatic plugin installation.
-- File explorer (disabled by default)
+- Code completion
+- Clean and simple user interface
+- Integration with development tools
+- File explorer via the NVimTree plugin
+- Terminal via the Toggleterm plugin
+  
+## Language Servers Protocols preinstalled
+
+These are the LSPs(Language Server Protocols) and linters installed automatically:
+
+- `html`: HTML language server
+- `cssls`: CSS language server
+- `cssmodules_ls`: CSS modules
+- `emmet_language_server`: Emmet(HTML completion)
+- `eslint`: JavaScript/TypeScript linter
+- `pyright`: Python Language server
+- `tsserver`: JavaScript/TypeScript language server
+- `gopls`: Go language server
+- `jdtls`: Java language Server Protocols
+
+NB: to avoid installation of language protocols you may not need please modify
+    the _ensure_installed_ field in `~/.config/nvim/lua/plugins/package-manager.lua`.
 
 ## Installation
 
@@ -38,10 +57,10 @@ To use my configuration, follow these steps:
 
 ## Customization
 
-Feel free to customize my configuration to your liking. You can make changes in
+Feel free to customize the configurations to your liking. You can make changes in
 the `init.lua` file or create your own configuration files in the
 `~/.config/nvim/` directory. You can also modify configuration files for specific
-plugins in `~/.config/nvim/lua/plugins/`
+plugins in `~/.config/nvim/lua/plugins/`.
 
 ## Plugins available
 
@@ -58,23 +77,6 @@ Here are some of the key plugins I use in my Neovim setup:
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Dashboard-nvim](https://github.com/nvimdev/dashboard-nvim): Dashboard
 - [Toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim): Manage terminal windows
-
-## Language Servers Protocols preinstalled
-
-These are the LSPs(Language Server Protocols) and linters installed automatically:
-
-- `html`: HTML language server
-- `cssls`: CSS language server
-- `cssmodules_ls`: CSS modules
-- `emmet_language_server`: Emmet(HTML completion)
-- `eslint`: JavaScript/TypeScript linter
-- `pyright`: Python Language server
-- `tsserver`: JavaScript/TypeScript language server
-- `gopls`: Go language server
-- `jdtls`: Java language Server Protocols
-
-NB: to avoid installation of language protocols you may not need please modify
-    the _ensure\_installed_ field in `~/.config/nvim/lua/plugins/package-manager.lua`.
 
 Happy coding with Neovim!
 
