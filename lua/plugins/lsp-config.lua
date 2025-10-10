@@ -5,11 +5,10 @@ return {
 	},
 	config = function()
 		-- Setup language servers.
-		local lspconfig = require("lspconfig")
+		local lspconfig = vim.lsp.config
 
 		local capabilities = require"cmp_nvim_lsp".default_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
-
 
 		local servers = {
 			"html",
@@ -25,11 +24,11 @@ return {
 		}
 
 		for _, server in ipairs(servers) do
-			lspconfig[server].setup({ capabilities = capabilities })
+			lspconfig(server, { capabilities = capabilities })
 		end
 
 		-- Linter configuration
-		lspconfig.eslint.setup({
+		lspconfig('eslint', {
 			on_attach = function(client, bufnr)
 				vim.api.nvim_create_autocmd("BufWritePre", {
 					buffer = bufnr,
@@ -43,8 +42,9 @@ return {
 		-- 	require'completion'.on_attach(client)
 		-- end
 
-		lspconfig.rust_analyzer.setup({
+		lspconfig('rust_analyzer', {
 			-- on_attach = on_attach,
+			cmd = { "rust-analyzer" },
 			settings = {
 				["rust-analyzer"] = {
 					imports = {
@@ -53,13 +53,14 @@ return {
 					},
 					cargo = { buildScripts = { enable = true }, },
 					procMacro = { enable = true },
-					checkOnSave = { command = "clippy" }
+					-- checkOnSave = { command = "clippy" }
 				}
 			},
 		})
+		vim.lsp.enable('rust_analyzer')
 
 		-- Dart lsp configuration
-		lspconfig.dartls.setup({ 
+		lspconfig('dartls', { 
 			capabilities = capabilities,
 			cmd = { '/home/sailor/Apps/flutter/bin/dart', 'language-server', '--protocol=lsp' },
 			filetypes = { 'dart' },
