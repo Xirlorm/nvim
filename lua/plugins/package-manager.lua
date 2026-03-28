@@ -15,7 +15,6 @@ return {
 				"pyright",
 				"tailwindcss",
 				"eslint",
-				"gopls",
 				"jdtls",
 			},
 		},
