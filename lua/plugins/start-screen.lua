@@ -8,6 +8,7 @@ return {
 				config = {
 					header = { 
 						"",
+						"",
 						"███╗░░██╗███████╗░█████╗░██╗░░░██╗██╗███╗░░░███╗",
 						"████╗░██║██╔════╝██╔══██╗██║░░░██║██║████╗░████║",
 						"██╔██╗██║█████╗░░██║░░██║╚██╗░██╔╝██║██╔████╔██║",
@@ -15,8 +16,15 @@ return {
 						"██║░╚███║███████╗╚█████╔╝░░╚██╔╝░░██║██║░╚═╝░██║",
 						"╚═╝░░╚══╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝",
 						"",
+						"",
 					},
 					center = {
+						{
+							icon = '󰊳 ',
+							desc = ' Update',
+							key = 'u',
+							action='Lazy update',
+						},
 						{
 							icon = ' ',
 							desc = ' Recent Files',
@@ -36,27 +44,24 @@ return {
 							action = 'Telescop find_files',
 						},
 						{
-							action = "Telescope live_grep",
-							desc = " Find Text",
 							icon = " ",
-							key = "g"
+							desc = " Find Text",
+							key = "g",
+							action = "Telescope live_grep",
 						},
 						{
-							action = "Lazy",
-							desc = " Lazy",
 							icon = "󰒲 ",
-							key = "l"
+							desc = " Manage Extensions",
+							key = "l",
+							action = "Lazy",
 						},
 						{
-							action = "qa",
-							desc = " Quit",
 							icon = " ",
-							key = "q"
+							desc = " Quit",
+							key = "q",
+							action = "qa",
 						},
 					},
-				},
-				hide = {
-					statusline = false,
 				},
 			})
 		end,
