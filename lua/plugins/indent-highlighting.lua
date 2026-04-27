@@ -1,9 +1,8 @@
 return {
-	'echasnovski/mini.indentscope',
+	"echasnovski/mini.indentscope",
 	version = false,
-	config = { header = 'Neovim' },
+	opts = { header = "Neovim" },
 	init = function()
-		require('mini.indentscope').setup({ symbol = "▎" })
-	end
+		require("mini.indentscope").setup({ symbol = "▎" })
+	end,
 }
-

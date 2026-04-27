@@ -1,5 +1,5 @@
 return {
-  {
+	{
 		"williamboman/mason.nvim",
 		opts = {},
 	},
@@ -16,6 +16,7 @@ return {
 				"tailwindcss",
 				"eslint",
 				"rust_analyzer",
+				"stylua",
 			},
 		},
 	},
