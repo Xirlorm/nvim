@@ -1,5 +1,5 @@
 return {
-    {
+  {
 		"williamboman/mason.nvim",
 		opts = {},
 	},
@@ -15,7 +15,7 @@ return {
 				"pyright",
 				"tailwindcss",
 				"eslint",
-				"jdtls",
+				"rust_analyzer",
 			},
 		},
 	},

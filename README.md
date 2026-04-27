@@ -25,8 +25,7 @@ These are the LSPs(Language Server Protocols) and linters installed automaticall
 - `eslint`: JavaScript/TypeScript linter
 - `pyright`: Python Language server
 - `tsserver`: JavaScript/TypeScript language server
-- `gopls`: Go language server
-- `jdtls`: Java language Server Protocols
+- `rust-analyzer`: Rust Language server
 
 NB: to avoid installation of language protocols you may not need please modify
     the _ensure_installed_ field in `~/.config/nvim/lua/plugins/package-manager.lua`.

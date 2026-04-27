@@ -1,5 +1,5 @@
-require('config.options')
-require('config.lazy')
-require('config.mappings')
-require('config.diagnostics')
+require('config.options')     -- Loads custom options
+require('config.lazy')        -- Loads extension manager(Lazy)
+require('config.mappings')    -- Loads custom key mappings
+require('config.diagnostics') -- Loads diagnostics instructions
 

@@ -14,66 +14,52 @@ return {
 		local luasnip = require("luasnip")
 		local cmp = require("cmp")
 
-		cmp.setup {
+		cmp.setup({
 			snippet = {
 				expand = function(args)
-					luasnip.lsp_expand(args.body)
+					require('luasnip').lsp_expand(args.body)
 				end,
 			},
 			window = {
-				-- completion = cmp.config.window.bordered(),
-				-- documentation = cmp.config.window.bordered(),
+				completion = cmp.config.window.bordered(),
+				documentation = cmp.config.window.bordered(),
 			},
 			mapping = cmp.mapping.preset.insert({
-				["<C-u>"] = cmp.mapping.scroll_docs(-4), -- Up
-				["<C-d>"] = cmp.mapping.scroll_docs(4), -- Down
-				-- C-b (back) C-f (forward) for snippet placeholder navigation.
-				["<C-Space>"] = cmp.mapping.complete(),
-				["<CR>"] = cmp.mapping.confirm {
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = true,
-				},
-				["<Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_next_item()
-					elseif luasnip.expand_or_jumpable() then
-						luasnip.expand_or_jump()
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-				["<S-Tab>"] = cmp.mapping(function(fallback)
-					if cmp.visible() then
-						cmp.select_prev_item()
-					elseif luasnip.jumpable(-1) then
-						luasnip.jump(-1)
-					else
-						fallback()
-					end
-				end, { "i", "s" }),
-			}),
-			sources = {
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" }
-			},
-		}
+			}, {
+				{ name = 'buffer' },
+			}),
+		})
 
+		-- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
 		-- Set configuration for specific filetype.
-		cmp.setup.filetype("gitcommit", {
+	  --[[	cmp.setup.filetype("gitcommit", {
 			sources = cmp.config.sources({
 				{ name = "git" }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
 			}, {
 				{ name = "buffer" },
 			})
 		})
+		require("cmp_git").setup() ]]
 
-		-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won"t work anymore).
-		cmp.setup.cmdline({ "/", "?" }, {
+		-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+		cmp.setup.cmdline(':', {
 			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
-				{ name = "buffer" }
-			}
+			sources = cmp.config.sources({
+				{ name = 'path' }
+			}, {
+				{ name = 'cmdline' }
+			}),
+			matching = { disallow_symbol_nonprefix_matching = false }
 		})
 
 		-- Use cmdline & path source for ":" (if you enabled `native_menu`, this won"t work anymore).
@@ -85,6 +71,14 @@ return {
 				{ name = "cmdline" }
 			})
 		})
+
+		-- Set up lspconfig.
+		local capabilities = require('cmp_nvim_lsp').default_capabilities()
+		-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+		vim.lsp.config('<YOUR_LSP_SERVER>', {
+			capabilities = capabilities
+		})
+		vim.lsp.enable('<YOUR_LSP_SERVER>')
 	end,
 }
 

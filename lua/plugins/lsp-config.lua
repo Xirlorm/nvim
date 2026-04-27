@@ -21,6 +21,7 @@ return {
 			"tailwindcss",
 			"jdtls",
 			"gopls",
+			"markdownlint",
 		}
 
 		for _, server in ipairs(servers) do
@@ -59,25 +60,25 @@ return {
 		})
 		vim.lsp.enable('rust_analyzer')
 
-		-- Dart lsp configuration
-		lspconfig('dartls', { 
-			capabilities = capabilities,
-			cmd = { '/home/sailor/Apps/flutter/bin/dart', 'language-server', '--protocol=lsp' },
-			filetypes = { 'dart' },
-			settings = {
-				dart = {
-					completeFunctionCalls = true,
-					showTodos = true,
-				},
-			},
-			init_options = {
-				closingLabels = true,
-				flutterOutline = true,
-				onlyAnalyzeProjectsWithOpenFiles = true,
-				outline = true,
-				suggestFromUnimportedLibraries = true
-			}
-		})
+		-- -- Dart lsp configuration
+		-- lspconfig('dartls', { 
+		-- 	capabilities = capabilities,
+		-- 	cmd = { '/home/sailor/Apps/flutter/bin/dart', 'language-server', '--protocol=lsp' },
+		-- 	filetypes = { 'dart' },
+		-- 	settings = {
+		-- 		dart = {
+		-- 			completeFunctionCalls = true,
+		-- 			showTodos = true,
+		-- 		},
+		-- 	},
+		-- 	init_options = {
+		-- 		closingLabels = true,
+		-- 		flutterOutline = true,
+		-- 		onlyAnalyzeProjectsWithOpenFiles = true,
+		-- 		outline = true,
+		-- 		suggestFromUnimportedLibraries = true
+		-- 	}
+		-- })
 
 		-- Global mappings.
 		-- See `:help vim.diagnostic.*` for documentation on any of the below functions
