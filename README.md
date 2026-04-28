@@ -13,7 +13,7 @@ plugins, and customizations I use to make Neovim my code and text editing tool.
 - Integration with development tools
 - File explorer via the NVimTree plugin
 - Terminal via the Toggleterm plugin
-  
+
 ## Language Servers Protocols preinstalled
 
 These are the LSPs(Language Server Protocols) and linters installed automatically:
@@ -28,7 +28,7 @@ These are the LSPs(Language Server Protocols) and linters installed automaticall
 - `rust-analyzer`: Rust Language server
 
 NB: to avoid installation of language protocols you may not need please modify
-    the _ensure_installed_ field in `~/.config/nvim/lua/plugins/package-manager.lua`.
+the _ensure_installed_ field in `~/.config/nvim/lua/plugins/package-manager.lua`.
 
 ## Installation
 
@@ -43,16 +43,15 @@ To use my configuration, follow these steps:
 2. Make sure you have Neovim installed. You can download it from [Neovim's official website](https://neovim.io/) or using a Package Manager.
 
 3. Install the required plugins
-
    - Open Neovim:
 
      ```shell
      nvim
      ```
+
      NB: Package manager and plugins are automatically installed when opened for the first time.
 
 4. Restart Neovim, You're all set!
-
 
 ## Customization
 
@@ -78,4 +77,3 @@ Here are some of the key plugins I use in my Neovim setup:
 - [Toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim): Manage terminal windows
 
 Happy coding with Neovim!
-
