@@ -1,12 +1,12 @@
 return {
 	{
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
 		init = function()
-			require('dashboard').setup({
-				theme = 'doom',
+			require("dashboard").setup({
+				theme = "doom",
 				config = {
-					header = { 
+					header = {
 						"",
 						"███╗░░██╗███████╗░█████╗░██╗░░░██╗██╗███╗░░░███╗",
 						"████╗░██║██╔════╝██╔══██╗██║░░░██║██║████╗░████║",
@@ -19,39 +19,39 @@ return {
 					},
 					center = {
 						{
-							icon = ' ',
-							desc = ' Recent Files',
-							key = 'r',
-							action = 'Telescope oldfiles',
+							icon = " ",
+							desc = " Recent Files",
+							key = "r",
+							action = "Telescope oldfiles",
 						},
 						{
-							icon = ' ',
-							desc = ' New File',
-							key = 'n',
-							action = 'ene | startinsert',
+							icon = " ",
+							desc = " New File",
+							key = "n",
+							action = "ene | startinsert",
 						},
 						{
-							icon = ' ',
-							desc = ' Find File',
-							key = 'b',
-							action = 'Telescop find_files',
+							icon = " ",
+							desc = " Find File",
+							key = "f",
+							action = "Telescop find_files",
 						},
 						{
 							icon = " ",
 							desc = " Find Text",
-							key = "g",
+							key = "t",
 							action = "Telescope live_grep",
 						},
 						{
-							icon = '󰊳 ',
-							desc = ' Update Extensions',
-							key = 'u',
-							action='Lazy update',
+							icon = "󰊳 ",
+							desc = " Update Extensions",
+							key = "u",
+							action = "Lazy update",
 						},
 						{
 							icon = "󰒲 ",
 							desc = " Manage Extensions",
-							key = "l",
+							key = "e",
 							action = "Lazy",
 						},
 						{
@@ -61,12 +61,12 @@ return {
 							action = "qa",
 						},
 					},
-		      vertical_center = true,
+					vertical_center = true,
 				},
 			})
 		end,
 		dependencies = {
-			{'nvim-tree/nvim-web-devicons'}
+			{ "nvim-tree/nvim-web-devicons" },
 		},
-	}
+	},
 }
