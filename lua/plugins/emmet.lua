@@ -4,7 +4,6 @@ return {
 	ft = {
 		"html",
 		"javascriptreact",
-		"typescriptreact"
+		"typescriptreact",
 	},
 }
-

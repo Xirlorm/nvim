@@ -25,4 +25,3 @@ return {
 		vim.cmd("colorscheme catppuccin-mocha")	-- Set colorschme
 	end,
 }
-

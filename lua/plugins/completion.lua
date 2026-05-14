@@ -81,4 +81,3 @@ return {
 		vim.lsp.enable('<YOUR_LSP_SERVER>')
 	end,
 }
-

@@ -61,7 +61,7 @@ return {
 		vim.lsp.enable('rust_analyzer')
 
 		-- -- Dart lsp configuration
-		-- lspconfig('dartls', { 
+		-- lspconfig('dartls', {
 		-- 	capabilities = capabilities,
 		-- 	cmd = { '/home/sailor/Apps/flutter/bin/dart', 'language-server', '--protocol=lsp' },
 		-- 	filetypes = { 'dart' },

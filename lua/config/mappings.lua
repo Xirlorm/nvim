@@ -18,4 +18,3 @@ vim.api.nvim_set_keymap(
 		silent = true,
 	}
 )
-
