@@ -55,6 +55,12 @@ return {
 							action = "Lazy",
 						},
 						{
+							icon = "⋯ ",
+							desc = " Manage LSP",
+							key = "m",
+							action = "Mason",
+						},
+						{
 							icon = " ",
 							desc = " Quit",
 							key = "q",
