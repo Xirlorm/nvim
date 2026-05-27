@@ -22,6 +22,6 @@ return {
 		},
 	},
 	cmd = function()
-		vim.cmd("colorscheme catppuccin-mocha")	-- Set colorschme
+		vim.cmd("colorscheme catppuccin-mocha") -- Set colorscheme
 	end,
 }
