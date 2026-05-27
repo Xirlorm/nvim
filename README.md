@@ -5,14 +5,14 @@ plugins, and customizations I use to make Neovim my code and text editing tool.
 
 ## Features
 
-- Automatic plugin installation
 - Clean and simple configuration
 - Syntax highlighting
 - Code completion
 - Clean and simple user interface
 - Integration with development tools
-- File explorer via the NVimTree plugin
-- Terminal via the Toggleterm plugin
+- Automatic plugin installation
+- File explorer via the _NVimTree_ plugin
+- In editor terminal interactivity via the _Toggleterm_ plugin
 
 ## Language Servers Protocols preinstalled
 
@@ -62,7 +62,7 @@ plugins in `~/.config/nvim/lua/plugins/`.
 
 ## Plugins available
 
-Here are some of the key plugins I use in my Neovim setup:
+Here are some of the key plugins I used in my Neovim setup:
 
 - [Catppuccin](https://github.com/catppuccin/nvim): Colorscheme
 - [Lazy.nvim](https://github.com/folke/lazy.nvim): Plugin Manager.
@@ -75,5 +75,8 @@ Here are some of the key plugins I use in my Neovim setup:
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Dashboard-nvim](https://github.com/nvimdev/dashboard-nvim): Dashboard
 - [Toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim): Manage terminal windows
+- [Flutter-tools.nvim](https://github.com/nvim-flutter/flutter-tools.nvim): Support for developing flutter based applications(disabled)
+
+NB: Disabled plugins such as _flutter-tools_ are to be enabled manually by uncommenting out it's configurations.
 
 Happy coding with Neovim!
