@@ -13,22 +13,24 @@ plugins, and customizations I use to make Neovim my code and text editing tool.
 - Automatic plugin installation
 - File explorer via the _NVimTree_ plugin
 - In editor terminal interactivity via the _Toggleterm_ plugin
+- Support for HTML, CSS, JS/TS, Python and Rust by default.
+- Auto code formatting support
 
-## Language Servers Protocols preinstalled
+## Language Servers Protocols and linters preinstalled
 
 These are the LSPs(Language Server Protocols) and linters installed automatically:
 
 - `html`: HTML language server
 - `cssls`: CSS language server
 - `cssmodules_ls`: CSS modules
-- `emmet_language_server`: Emmet(HTML completion)
+- `emmet_language_server`: HTML completion via css like syntax
 - `eslint`: JavaScript/TypeScript linter
 - `pyright`: Python Language server
 - `tsserver`: JavaScript/TypeScript language server
 - `rust-analyzer`: Rust Language server
 
-NB: to avoid installation of language protocols you may not need please modify
-the _ensure_installed_ field in `~/.config/nvim/lua/plugins/package-manager.lua`.
+> **NB:** to avoid installation of language protocols you may not need please modify
+> the _ensure_installed_ field in `~/.config/nvim/lua/plugins/package-manager.lua`.
 
 ## Installation
 
@@ -49,9 +51,13 @@ To use my configuration, follow these steps:
      nvim
      ```
 
-     NB: Package manager and plugins are automatically installed when opened for the first time.
+     > **NB:** _Package manager and plugins are automatically installed when neovim is opened for the first time._
 
 4. Restart Neovim, You're all set!
+
+> **NB:** Formatters such as _black_(Python), _prettier_(HTML, CSS, JavaScript), _isort_(Python)
+> are not installed by default and can be done via `:MasonInstall <formatter>` where _\<formatter\>_
+> is the formatter you want to install.
 
 ## Customization
 
@@ -77,6 +83,6 @@ Here are some of the key plugins I used in my Neovim setup:
 - [Toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim): Manage terminal windows
 - [Flutter-tools.nvim](https://github.com/nvim-flutter/flutter-tools.nvim): Support for developing flutter based applications(disabled)
 
-NB: Disabled plugins such as _flutter-tools_ are to be enabled manually by uncommenting out it's configurations.
+> **NB:** Disabled plugins such as _flutter-tools_ are to be enabled manually by uncommenting out it's configurations.
 
 Happy coding with Neovim!
