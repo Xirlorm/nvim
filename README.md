@@ -3,6 +3,8 @@
 Tailored according to my workflow, this repository contains all the settings,
 plugins, and customizations I use to make Neovim my code and text editing tool.
 
+![Screenshot of Neovim with this configuration](./Neovim-Screenshot.png)
+
 ## Features
 
 - Clean and simple configuration
@@ -16,7 +18,7 @@ plugins, and customizations I use to make Neovim my code and text editing tool.
 - Support for HTML, CSS, JS/TS, Python and Rust by default.
 - Auto code formatting support
 
-## Language Servers Protocols and linters preinstalled
+## LSPs and linters preinstalled
 
 These are the LSPs(Language Server Protocols) and linters installed automatically:
 
