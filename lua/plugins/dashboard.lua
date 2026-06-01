@@ -40,7 +40,7 @@ return {
 							icon = "󰍉 ",
 							desc = " Find File",
 							key = "f",
-							action = "Telescop find_files",
+							action = "Telescope find_files",
 						},
 						{
 							icon = " ",
