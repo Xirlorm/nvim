@@ -1,7 +1,6 @@
 return {
 	{
 		"akinsho/bufferline.nvim",
-		event = "VeryLazy",
 		version = "*",
 		init = function()
 			local bufferline = require("bufferline")
@@ -21,6 +20,7 @@ return {
 				},
 			})
 		end,
+		event = "VeryLazy",
 	},
 	{
 		"nvim-lualine/lualine.nvim",

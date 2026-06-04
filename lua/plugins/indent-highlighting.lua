@@ -3,6 +3,7 @@ return {
 	version = "*",
 	opts = { header = "Neovim" },
 	init = function()
-		require("mini.indentscope").setup({ symbol = "▎" })
+		require("mini.indentscope").setup({ symbol = "▏" })
 	end,
+	event = "VeryLazy",
 }

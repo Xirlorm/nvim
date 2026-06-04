@@ -11,4 +11,5 @@ return {
 
 		vim.keymap.set("n", "<leader>cp", "<cmd>CccPick<CR>")
 	end,
+	event = "VeryLazy",
 }

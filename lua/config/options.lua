@@ -9,7 +9,7 @@ vim.cmd("syntax on") -- Enable syntax highlighting
 
 --  Editor variables
 set.number = true -- Enable line numbering
-set.relativenumber = false -- Disalbe line relative line numbering
+set.relativenumber = true -- Enable line relative line numbering
 set.mouse = "a" -- Enable mouse
 set.ignorecase = false
 set.smartcase = false

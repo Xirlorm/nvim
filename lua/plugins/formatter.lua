@@ -27,4 +27,5 @@ return {
 			notify_on_error = true,
 		})
 	end,
+	event = "BufEnter",
 }

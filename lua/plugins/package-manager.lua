@@ -2,6 +2,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		opts = {},
+		event = "VeryLazy",
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
