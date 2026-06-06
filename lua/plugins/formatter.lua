@@ -16,8 +16,8 @@ return {
 				typescript = { "prettier", "eslint" },
 				typescriptreact = { "prettier", "eslint" },
 				json = { "prettier", "eslint" },
-				c = { "clangd" },
-				cpp = { "clangd" },
+				c = { "clang-format" },
+				cpp = { "clangd-format" },
 				go = { "goimports", "gofmt" },
 			},
 			format_on_save = {
