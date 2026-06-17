@@ -14,13 +14,13 @@ return {
 		-- ########################################
 		-- #        Autocompletion setup          #
 		-- ########################################
-		local luasnip = require("luasnip")
 		local cmp = require("cmp")
 
 		cmp.setup({
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
+					-- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
 				end,
 			},
 			window = {
@@ -37,7 +37,6 @@ return {
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
-				{ name = "buffer" },
 			}, {
 				{ name = "buffer" },
 			}),
@@ -79,7 +78,6 @@ return {
 		-- #  Set up lspconfig language servers   #
 		-- ########################################
 		local lspconfig = vim.lsp.config
-
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		capabilities.textDocument.completion.completionItem.snippetSupport = true
 
@@ -97,12 +95,15 @@ return {
 			"markdownlint",
 			"eslint",
 			"prettier",
+			"djls",
+			"lua_ls",
 		}
 
 		for _, server in ipairs(servers) do
 			lspconfig(server, { capabilities = capabilities })
 		end
 
+		-- Eslint configuration
 		local base_on_attach = lspconfig.eslint.on_attach
 		lspconfig("eslint", {
 			on_attach = function(client, bufnr)
@@ -139,7 +140,7 @@ return {
 		-- Dart lsp configuration
 		lspconfig("dartls", {
 			capabilities = capabilities,
-			cmd = { "/home/sailor/Apps/flutter/bin/dart", "language-server", "--protocol=lsp" },
+			cmd = { vim.fn.exepath("dart"), "language-server", "--protocol=lsp" },
 			filetypes = { "dart" },
 			settings = {
 				dart = {

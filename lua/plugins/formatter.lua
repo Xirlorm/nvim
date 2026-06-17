@@ -9,7 +9,7 @@ return {
 				css = { "prettier" },
 				scss = { "prettier" },
 				html = { "prettier" },
-				python = { "isort", "black" },
+				python = { "black", "isort" },
 				rust = { "rustfmt", lsp_format = "fallback" },
 				javascript = { "prettier", "eslint" },
 				javascriptreact = { "prettier", "eslint" },

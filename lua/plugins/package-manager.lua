@@ -1,11 +1,27 @@
 return {
 	{
-		"williamboman/mason.nvim",
-		opts = {},
-		event = "VeryLazy",
+		"mason-org/mason.nvim",
+		init = function()
+			require("mason").setup({
+				firewall = {
+					enabled = true,
+				},
+				ui = {
+					icons = {
+						package_installed = "✓",
+						package_pending = "➜",
+						package_uninstalled = "✗",
+					},
+				},
+			})
+		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
+		dependencies = {
+			"mason-org/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
 		opts = {
 			ensure_installed = {
 				"html",
@@ -18,13 +34,7 @@ return {
 				"eslint",
 				"rust_analyzer",
 				"stylua",
-			},
-			ui = {
-				icons = {
-					package_installed = "✓",
-					package_pending = "➜",
-					package_uninstalled = "✗",
-				},
+				"lua_ls",
 			},
 		},
 	},

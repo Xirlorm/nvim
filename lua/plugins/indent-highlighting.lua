@@ -5,5 +5,4 @@ return {
 	init = function()
 		require("mini.indentscope").setup({ symbol = "▏" })
 	end,
-	event = "VeryLazy",
 }
