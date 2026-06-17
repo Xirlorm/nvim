@@ -1,7 +1,10 @@
 -- Configure diagnostics
 vim.diagnostic.config({
 	virtual_text = false,
-	float = { source = "always" },
+	float = {
+		source = "always",
+		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+	},
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = "✖",
