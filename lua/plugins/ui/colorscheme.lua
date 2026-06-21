@@ -21,7 +21,7 @@ return {
 			bufferline = true,
 		},
 	},
-	cmd = function()
+	init = function()
 		vim.cmd("colorscheme catppuccin-mocha") -- Set colorscheme
 	end,
 }

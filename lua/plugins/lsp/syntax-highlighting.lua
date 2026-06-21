@@ -1,0 +1,22 @@
+return {
+	"nvim-treesitter/nvim-treesitter",
+	event = "BufEnter",
+	build = ":TSUpdate",
+	opts = {
+		ensure_installed = {
+			"lua",
+			"typescript",
+			"javascript",
+			"html",
+			"css",
+			"python",
+			"markdown",
+			"tsx",
+			"rust",
+			"bash",
+		},
+		sync_install = false,
+		auto_install = true,
+		highlight = { enable = true },
+	},
+}

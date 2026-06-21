@@ -2,7 +2,8 @@ return {
 	{
 		"akinsho/bufferline.nvim",
 		version = "*",
-		init = function()
+		event = "BufEnter",
+		config = function()
 			local bufferline = require("bufferline")
 			bufferline.setup({
 				options = {
@@ -30,6 +31,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		version = "*",
+		event = "BufEnter",
 		opts = {
 			options = {
 				theme = "catppuccin-macchiato",

@@ -1,6 +1,6 @@
 return {
 	"NeogitOrg/neogit",
-	lazy = true,
+	event = "VimEnter",
 	dependencies = {
 		"sindrets/diffview.nvim",
 		"nvim-telescope/telescope.nvim",
