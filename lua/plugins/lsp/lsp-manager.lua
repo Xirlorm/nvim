@@ -17,30 +17,24 @@ return {
 			"rust_analyzer",
 			"stylua",
 			"lua_ls",
+			"djls",
 		},
 	},
-	config = function()
+	init = function()
 		-- ########################################
 		-- #  Pre install development tools here  #
 		-- ########################################
-		local mr = require("mason-registry")
-
-		local tools = {
-			"black",
-			"isort",
-			"prettier",
-			"gitlint",
-			"markdownlint",
-			"gitui",
-		}
-
-		for _, tool in ipairs(tools) do
-			local p = mr.get_package(tool)
-			if not p:is_installed() then
-				p:install()
-			end
-		end
-
+		require("mason-extra-tools").setup({
+			tools = {
+				-- Formatters
+				"black",
+				"isort",
+				"prettier",
+			
+				-- Parsers / misc
+				"tree-sitter-cli",
+			},
+		})
 		-- ########################################
 		-- #  Set up lspconfig language servers   #
 		-- ########################################
