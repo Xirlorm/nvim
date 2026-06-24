@@ -1,5 +1,5 @@
 return {
 	"numToStr/Comment.nvim",
 	opts = {},
-	event = "BufEnter",
+	event = { "BufReadPost", "BufNewFile" },
 }

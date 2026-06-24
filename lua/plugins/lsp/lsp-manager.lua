@@ -30,7 +30,7 @@ return {
 				"black",
 				"isort",
 				"prettier",
-			
+
 				-- Parsers / misc
 				"tree-sitter-cli",
 			},

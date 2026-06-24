@@ -3,7 +3,7 @@
 Tailored according to my workflow, this repository contains all the settings,
 plugins, and customizations I use to make Neovim my code and text editing tool.
 
-![Screenshot of Neovim with this configuration](./Neovim-Screenshot.png)
+![Screenshot of Neovim with this configuration](./assets/Neovim-Screenshot.png)
 
 ## Features
 

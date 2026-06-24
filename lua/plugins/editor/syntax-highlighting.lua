@@ -1,7 +1,7 @@
 return {
 	"romus204/tree-sitter-manager.nvim",
 	dependencies = {},
-	event = { "BufReadPost", "BufNewFile" },
+	event = "VeryLazy",
 	config = function()
 		require("tree-sitter-manager").setup({
 			border = "rounded",

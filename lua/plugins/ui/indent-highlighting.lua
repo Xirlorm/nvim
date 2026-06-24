@@ -1,6 +1,6 @@
 return {
 	"echasnovski/mini.indentscope",
-	event = "BufEnter",
+	event = { "BufReadPost", "BufNewFile" },
 	version = "*",
 	opts = { header = "Neovim", symbol = "▏" },
 }
