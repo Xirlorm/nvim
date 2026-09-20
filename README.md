@@ -10,13 +10,16 @@ plugins, and customizations I use to make Neovim my code and text editing tool.
 - Clean and simple configuration
 - Syntax highlighting
 - Code completion
-- Clean and simple user interface
-- Integration with development tools
+- Clean, friendly and simple user interface
+- Easy integration with development tools
 - Automatic plugin installation
+- Easy plugin and tooling management
 - File explorer via the _NVimTree_ plugin
 - In editor terminal interactivity via the _Toggleterm_ plugin
-- Support for HTML, CSS, JS/TS, Python and Rust by default.
+- Support for HTML, CSS, JS/TS, Python, Rust and more by default.
 - Auto code formatting support
+- Color picker
+- Code snapping/screenshot tool
 
 ## LSPs and linters preinstalled
 
